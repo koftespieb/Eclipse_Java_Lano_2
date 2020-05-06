@@ -11,6 +11,7 @@
 	<classpathentry kind="src" path="Lab1"/>
 	<classpathentry kind="src" path="Lab2"/>
 	<classpathentry kind="src" path="Lab3"/>
+	<classpathentry kind="src" path="Assignment4"/>
 	<classpathentry kind="lib" path="Assignment1/acm.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
