@@ -1,0 +1,5 @@
+Nuernberg > Berlin
+Nuernberg > Frankfurt
+Nuernberg > Munich
+Munich > Nuernberg
+Hamburg > Berlin
