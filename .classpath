@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Assignment1"/>
+	<classpathentry kind="src" path="Assignment2"/>
+	<classpathentry kind="src" path="Assignment3"/>
+	<classpathentry kind="src" path="Lab1"/>
+	<classpathentry kind="src" path="Lab2"/>
+	<classpathentry kind="src" path="Lab3"/>
+	<classpathentry kind="lib" path="Assignment1/acm.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
