@@ -4,6 +4,7 @@ import acm.program.ConsoleProgram;
 //Autor: Nico Mayer
 
 public class ConsonantalAlphabet extends ConsoleProgram {
+	//DummerWixxer
 	public void run() {
 		while (true) {
 			String text = readLine("Enter text: ");
