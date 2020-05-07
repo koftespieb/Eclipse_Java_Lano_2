@@ -12,6 +12,7 @@ import java.util.TreeMap;
 import acm.program.ConsoleProgram;
 
 public class Buildindex extends ConsoleProgram {
+	//Komentar
 	private Map<String, Integer> words = new TreeMap<String, Integer>();
 	private Set<String> stopWords = new HashSet<String>();
 	int total_words;
