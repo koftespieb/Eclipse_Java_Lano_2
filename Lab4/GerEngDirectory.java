@@ -12,6 +12,20 @@ public class GerEngDirectory extends ConsoleProgram {
 	Map<String, String> dictionary = new HashMap<String, String>();
 
 	public void run() {
+		setup();
+		while (true) {
+			String input = readLine("Enter Word/Sentence to translate en to ger: ");
+
+			if (dictionary.containsKey(input)) {
+				println(input + " translates to: " + dictionary.get(input));
+			} else {
+				println("no translation available.");
+			}
+		}
+
+	}
+
+	private void setup() {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("Lab4/dictionary_en_de.txt"));
 			readFile(br);
@@ -19,10 +33,6 @@ public class GerEngDirectory extends ConsoleProgram {
 		} catch (IOException e) {
 			println("file not found");
 		}
-		for (String word : dictionary.keySet()) {
-			println(word + dictionary.get(word));
-		}
-
 	}
 
 	private void readFile(BufferedReader br) throws IOException {
@@ -40,9 +50,10 @@ public class GerEngDirectory extends ConsoleProgram {
 	private void addToMap(String line) {
 		StringTokenizer st = new StringTokenizer(line, "=");
 		while (st.hasMoreTokens()) {
-			String ger = st.nextToken();
 			String eng = st.nextToken();
-			dictionary.put(ger, eng);
+			String ger = st.nextToken();
+
+			dictionary.put(eng, ger);
 		}
 
 	}
