@@ -1,0 +1,15 @@
+hallway > kitchen
+hallway > tobis room
+hallway > steffens room
+hallway > jans room
+hallway > bath
+hallway > nicos room
+hallway > toilet
+kitchen > balkonie
+kitchen > hallway
+tobis room > hallway
+steffens room > hallway
+jans room > hallway
+bath > hallway
+nicos room > hallway
+toilet > hallway
