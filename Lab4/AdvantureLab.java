@@ -14,9 +14,22 @@ public class AdvantureLab extends ConsoleProgram {
 
 	public void run() {
 		readRoomMapFile();
-		for (String from : roomMap.keySet()) {
-			ArrayList<String> rooms = roomMap.get(from);
-			println(from + ">" + rooms);
+		startAdventure();
+
+	}
+
+	private void startAdventure() {
+		String currentRoom = "hallway";
+		while (true) {
+			println("You are currently in " + currentRoom);
+			println("You can go to " + roomMap.get(currentRoom));
+			String target = readLine("Go to: ");
+			if(roomMap.containsKey(target)) {
+				currentRoom = target;
+			}
+			else
+				println("please enter vaild room");
+
 		}
 	}
 
