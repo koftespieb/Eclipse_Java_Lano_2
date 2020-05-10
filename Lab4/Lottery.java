@@ -11,6 +11,19 @@ public class Lottery extends ConsoleProgram {
 		for (int s : generateLotteryNumbers()) {
 			print(s + ", ");
 		}
+		generateLotteryNumbersWithArray();
+
+	}
+
+	private int[] generateLotteryNumbersWithArray() {
+		int[] lottery = new int[10];
+		for (int i = 0; i <= 6; i++) {
+			int s = rgen.nextInt(1, 49);
+			lottery[i] = s;
+			println (lottery[i]);
+		}
+
+		return lottery;
 
 	}
 
