@@ -2,3 +2,4 @@ Nuermberg > Berlin
 Nuermberg > Frankfurt
 Nuermberg > Munich
 Hamburg > Berlin
+Frankfurt > Hamburg

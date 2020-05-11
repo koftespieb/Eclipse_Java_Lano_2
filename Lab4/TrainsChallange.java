@@ -13,17 +13,28 @@ public class TrainsChallange extends ConsoleProgram {
 	private ArrayList<String> cities = new ArrayList<String>();
 	private String fileName = "Lab4/fahrplan.txt";
 
+	public void init() {
+		setSize(600, 600);
+		setFont("Arial-18");
+	}
+
 	public void run() {
 		setup();
-		println("Available cities are: " + cities);
-		String start = readLine("Where do you want to start ?");
+		println("Available cities are: \n");
+		printMap(cities);
+		String start = readLine("\nWhere do you want to start ? : ");
 		String currentLocation = start;
-		println("From" + currentLocation + " you can go to " + connections.get(currentLocation));
 		while (true) {
 			if (cities.contains(currentLocation)) {
-				currentLocation = readLine("Where do you want to go next?");
-			} else
+				println("From " + currentLocation + " you can go to: \n");
+				printMap(connections.get(currentLocation));
+			} else if (currentLocation.equals("")) {
+				println("thank you for using our service.");
+				break;
+			} else {
 				println("enter valid city name.");
+			}
+			currentLocation = readLine("\nWhere do you want to go next?");
 		}
 
 	}
@@ -58,7 +69,7 @@ public class TrainsChallange extends ConsoleProgram {
 		String source = st.nextToken().trim();
 		String destination = st.nextToken().trim();
 
-		if (!cities.contains(source)) {
+		if (!connections.containsKey(source)) {
 			cities.add(source);
 			connections.put(source, cits = new ArrayList<String>());
 			cits.add(destination);
@@ -72,5 +83,12 @@ public class TrainsChallange extends ConsoleProgram {
 			cities.add(destination);
 		}
 
+	}
+
+	public void printMap(ArrayList<String> destin) {
+			for (String string : destin) {
+				println(string);
+			
+		}
 	}
 }
