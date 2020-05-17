@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 import acm.program.ConsoleProgram;
 
-public class Advanture extends ConsoleProgram {
+public class AdventureLab extends ConsoleProgram {
 	private HashMap<String, ArrayList<String>> roomMap = new HashMap<String, ArrayList<String>>();
 	private BufferedReader br;
 

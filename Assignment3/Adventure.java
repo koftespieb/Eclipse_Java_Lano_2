@@ -1,5 +1,4 @@
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,7 +7,7 @@ import java.util.StringTokenizer;
 
 import acm.program.ConsoleProgram;
 
-public class AdvantureLab extends ConsoleProgram {
+public class Adventure extends ConsoleProgram {
 	private HashMap<String, ArrayList<String>> roomMap = new HashMap<String, ArrayList<String>>();
 	private BufferedReader br;
 
