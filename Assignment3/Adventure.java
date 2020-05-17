@@ -34,7 +34,7 @@ public class Adventure extends ConsoleProgram {
 
 	private void readRoomMapFile() {
 		try {
-			br = new BufferedReader(new FileReader("Lab4/roomMap.txt"));
+			br = new BufferedReader(new FileReader("Assignment3/roomMap.txt"));
 			while (true) {
 				String line = br.readLine();
 				if (line == null) {
