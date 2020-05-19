@@ -15,7 +15,7 @@ public class RecursiveKarel extends GraphicsProgram {
 	}
 
 	private void drawKarel(double scale, int x, int y) {
-		GImage karel = new GImage("/Lab6/Karel0.png");
+		GImage karel = new GImage("Lab6/Karel0.png");
 		karel.scale(scale);
 
 		add(karel, (SIZE - karel.getWidth()) / 2 + x, (SIZE - karel.getHeight()) / 2 + y);
