@@ -46,7 +46,7 @@ public class Lightning extends GraphicsProgram {
 
 	private void drawLine(double x1, double y1, double x2, double y2) {
 		GLine line = new GLine(x1, y1, x2, y2);
-		line.setColor(Color.cyan);
+		line.setColor(Color.white);
 		add(line);
 		line.sendToBack();
 
