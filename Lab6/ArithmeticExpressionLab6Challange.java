@@ -41,11 +41,23 @@ public class ArithmeticExpressionLab6Challange extends ConsoleProgram {
 	}
 
 	private int findPlusAndMinus(String expression) {
-		return -1;
+		int i;
+		for (i = expression.length() - 1; i >= 0; i--) {
+			if (expression.charAt(i) == '+' || expression.charAt(i) == '-') {
+				break;
+			}
+		}
+		return i;
 
 	}
 
 	private int findTimesAndDvide(String expression) {
-		return -1;
+		int i;
+		for (i = expression.length() - 1; i >= 0; i--) {
+			if (expression.charAt(i) == '*' || expression.charAt(i) == '/') {
+				break;
+			}
+		}
+		return i;
 	}
 }
