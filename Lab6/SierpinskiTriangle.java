@@ -4,7 +4,7 @@ import acm.graphics.GPolygon;
 import acm.program.GraphicsProgram;
 
 public class SierpinskiTriangle extends GraphicsProgram {
-	private final int SIZE = 500;
+	private final int SIZE = 1000;
 	private final int Y_OFFSET = 24;
 
 	public void init() {
@@ -15,6 +15,7 @@ public class SierpinskiTriangle extends GraphicsProgram {
 	public void run() {
 		// drawTriangle(0,0,SIZE,SIZE);
 		drawSierpTri(0, 0, SIZE, SIZE - Y_OFFSET);
+		
 	}
 
 	public void drawSierpTri(double x, double y, double w, double h) {
@@ -31,6 +32,7 @@ public class SierpinskiTriangle extends GraphicsProgram {
 		drawSierpTri(x, y, w2, h2);
 		drawSierpTri(x + (w2 / 2.0), y + h2, w2, h2);
 		drawSierpTri(x + w2, y, w2, h2);
+		pause(1);
 	}
 
 	private void drawTriangle(double x, double y, double w, double h) {
