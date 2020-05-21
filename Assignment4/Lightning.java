@@ -32,7 +32,8 @@ public class Lightning extends GraphicsProgram {
 	private void drawLightning(double x1, double y1, double x2, double y2, double displacement) {
 		// base case
 		if (displacement < 2) {
-			drawLine(x1, y1, x2, y2);
+			GLine line = drawLine(x1, y1, x2, y2);
+			add(line);
 		} else {
 			double mid_x = (x1 + x2) / 2.0;
 			double mid_y = (y1 + y2) / 2.0;
@@ -44,11 +45,11 @@ public class Lightning extends GraphicsProgram {
 		}
 	}
 
-	private void drawLine(double x1, double y1, double x2, double y2) {
+	private GLine drawLine(double x1, double y1, double x2, double y2) {
 		GLine line = new GLine(x1, y1, x2, y2);
 		line.setColor(Color.white);
-		add(line);
 		line.sendToBack();
+		return line;
 
 	}
 
