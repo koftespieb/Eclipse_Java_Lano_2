@@ -34,7 +34,6 @@ public class Tree extends GraphicsProgram {
 		double branchAngle = Math.toRadians(rgen.nextDouble(-30, 30));
 		drawAst(x1, y1, angle + bendAngle - branchAngle, length * rgen.nextDouble(0.6, 0.8));
 		drawAst(x1, y1, angle + bendAngle + branchAngle, length * rgen.nextDouble(0.6, 0.8));
-
 	}
 
 	private void drawLine(double x, double y, double x1, double y1,double length) {
