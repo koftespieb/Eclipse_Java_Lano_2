@@ -2,6 +2,7 @@ import acm.program.ConsoleProgram;
 
 public class Power extends ConsoleProgram {
 	private static final int SIZE = 500;
+	public long[] powerLookupTable;
 
 	public void init() {
 		setSize(SIZE, SIZE);
@@ -9,39 +10,73 @@ public class Power extends ConsoleProgram {
 	}
 
 	public void run() {
-		int base = readInt("Enter Base(int): ");
-		int power = readInt("Enter Power(int): ");
+		int base = 2;
+		int power = readInt("Enter Power(int max 20): ");
 
-		powerIteration(base, power);
+		testDyniamicProgramingTime(base, power);
+		testTimeIteration(base, power);
 		testTimePowerRecursion(base, power);
 
 	}
 
-	private void testTimePowerRecursion(int base, int power) {
+	// divide and conqure
+	
+
+	// dynamic Programing
+	private void testDyniamicProgramingTime(int base, int power) {
 		long start = System.currentTimeMillis();
-		println("\nRecursion: " + powerRecursion(base, power));
+		initPowerLookupTable(base);
+		println("\nDynamicPrograming: " + powerDinamcProgramming(power));
 		long end = System.currentTimeMillis();
-		println("Time: " + (end - start)+"Ms");
+		println("Time: " + (end - start) + "Ms");
 
 	}
 
-	private long powerRecursion(int base, int power) {
+	private void initPowerLookupTable(int base) {
+		powerLookupTable = new long[20 + 1];
+		for (int i = 1; i < powerLookupTable.length; i++) {
+			powerLookupTable[i] = powerIteration(base, i);
+		}
+
+	}
+
+	private long powerDinamcProgramming(int n) {
+		return powerLookupTable[n];
+	}
+
+	// recursion
+	private void testTimePowerRecursion(int base, int power) {
+		long start = System.currentTimeMillis();
+		println("\nRecursion: " + powerRE(base, power));
+		long end = System.currentTimeMillis();
+		println("Time: " + (end - start) + "Ms");
+
+	}
+
+	private long powerRE(int base, int power) {
 		// base case
 		if (power == 0) {
 			return 1;
 		}
 		// recursive case
-		return base * powerRecursion(base, power - 1);
+		return base * powerRE(base, power - 1);
 
 	}
 
-	private void powerIteration(int base, int power) {
+	// iteration
+	private void testTimeIteration(int base, int power) {
 		long start = System.currentTimeMillis();
+		println("\nIteration: " + powerIteration(base, power));
+		long end = System.currentTimeMillis();
+		println("Time: " + (end - start) + "Ms");
+
+	}
+
+	private long powerIteration(int base, int power) {
 		long m = 1;
 		for (int i = 0; i < power; i++) {
 			m = m * base;
 		}
-		long end = System.currentTimeMillis();
-		println("\nIteration: " + m + "\nTime: " + (end - start)+"Ms");
+		return m;
 	}
 }
