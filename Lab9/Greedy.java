@@ -9,6 +9,7 @@ public class Greedy extends ConsoleProgram {
 		println("Price for one Coffee: " + price);
 		int back = readInt("Enter Ammount in Cent: ") - price;
 		giveChange(back);
+		//kleine änderung amk
 
 	}
 
