@@ -10,6 +10,9 @@ public class Node {
 		element = e;
 		child = new ArrayList<Node>();
 	}
+	public static void main(String[] args) {
+		
+	}
 
 	private void addChild(Node node) {
 		child.add(node);
