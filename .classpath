@@ -19,6 +19,7 @@
 	<classpathentry kind="src" path="Lab8"/>
 	<classpathentry kind="src" path="Lab9"/>
 	<classpathentry kind="src" path="LabA"/>
+	<classpathentry kind="src" path="Assignment5"/>
 	<classpathentry kind="lib" path="acm.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
