@@ -21,6 +21,7 @@
 	<classpathentry kind="src" path="LabA"/>
 	<classpathentry kind="src" path="Assignment5"/>
 	<classpathentry kind="src" path="Trees"/>
+	<classpathentry kind="src" path="LocalMacBook"/>
 	<classpathentry kind="lib" path="acm.jar"/>
 	<classpathentry kind="lib" path="VzT.jar"/>
 	<classpathentry kind="output" path="bin"/>
