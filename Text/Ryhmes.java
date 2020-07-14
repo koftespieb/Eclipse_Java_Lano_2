@@ -11,19 +11,23 @@ public class Ryhmes extends ConsoleProgram {
 	private SimpleTrie trie = new SimpleTrie();
 
 	public void run() {
-		loadLexiconFromFile("LocalMacBook/dictionary_en_de.txt");
+		loadLexiconFromFile("Text/dictionary_en_de.txt");
 		println(revString("Nico"));
-		println(trie.contains("hello"));
+		println(trie.contains("ocin"));
 	}
 
 	private void loadLexiconFromFile(String fileName) {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(fileName));
 			StringTokenizer st;
-			String line = br.readLine();
-			while (line != null) {
+			while (true) {
+				String line = br.readLine();
+				if(line==null) {
+					break;
+				}
 				st = new StringTokenizer(line, " ");
 				while (st.hasMoreTokens()) {
+					println("adding to trie");
 					trie.add(revString(st.nextToken()));
 				}
 			}
