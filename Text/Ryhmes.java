@@ -12,8 +12,10 @@ public class Ryhmes extends ConsoleProgram {
 
 	public void run() {
 		loadLexiconFromFile("Text/dictionary_en_de.txt");
-		println(revString("Nico"));
-		println(trie.contains("ocin"));
+		String word = readLine("Enter Word: ");
+		for (String s : trie.nodesWithPrefix(revString(word))) {
+			println(revString(s));
+		}
 	}
 
 	private void loadLexiconFromFile(String fileName) {
@@ -27,10 +29,10 @@ public class Ryhmes extends ConsoleProgram {
 				}
 				st = new StringTokenizer(line, " ");
 				while (st.hasMoreTokens()) {
-					println("adding to trie");
 					trie.add(revString(st.nextToken()));
 				}
 			}
+			br.close();
 
 		} catch (IOException e) {
 
