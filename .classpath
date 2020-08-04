@@ -23,6 +23,7 @@
 	<classpathentry kind="src" path="Trees"/>
 	<classpathentry kind="src" path="LocalMacBook"/>
 	<classpathentry kind="src" path="Text"/>
+	<classpathentry kind="src" path="ASCIIArtConv "/>
 	<classpathentry kind="lib" path="acm.jar"/>
 	<classpathentry kind="lib" path="VzT.jar"/>
 	<classpathentry kind="output" path="bin"/>
