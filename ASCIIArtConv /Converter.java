@@ -11,8 +11,6 @@ public class Converter extends ConsoleProgram {
 
 	public void run() {
 		String art = "";
-		String output = "";
-		int backCount = 0;
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("ASCIIArtConv /art.txt"));
 			while (true) {
@@ -23,26 +21,34 @@ public class Converter extends ConsoleProgram {
 				println(line);
 				art += line + "\n";
 			}
-			println(art.length());
-			StringBuffer str = new StringBuffer(art);
-			
-			
-			for (int i = 0; i < art.length(); i++) {
-				if (art.charAt(i) == '\\') {
-					str.insert(i+backCount, '\\');
-					backCount++;
-				}
-			}
-			
-			output = str.toString();
-			println(backCount);
 			br.close();
-
 		} catch (IOException e) {
 			println("file not found");
 		}
-		safeToFile(output);
 
+		String temp = quote(art,'\\');
+		String temp2 = quote(temp,'\"');
+		String temp3 = quote(temp2,'\'');
+		
+		println(temp3);
+		safeToFile(temp3);
+
+	}
+
+	String quote(String s, char c) {
+		StringBuffer str = new StringBuffer(s);
+		String temp = "";
+		int count = 0;
+
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) == c) {
+				str.insert(i + count, c);
+				count++;
+			}
+		}
+		println("Added "+count+" "+c);
+		temp = str.toString();
+		return temp;
 	}
 
 	void safeToFile(String art) {
