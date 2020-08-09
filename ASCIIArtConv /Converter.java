@@ -28,10 +28,10 @@ public class Converter extends ConsoleProgram {
 
 		String temp = quote(art,'\\');
 		String temp2 = quote(temp,'\"');
-		String temp3 = quote(temp2,'\'');
+		//String temp3 = quote(temp2,'\'');
 		
-		println(temp3);
-		safeToFile(temp3);
+		println(temp2);
+		safeToFile(temp2);
 
 	}
 
